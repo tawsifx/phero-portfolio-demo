@@ -125,14 +125,21 @@ a{
     margin-top: 100px;
     margin-bottom: 60px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     .note{
-      margin:60px 60px;
+      margin:30px 60px;
+      margin-top:30px
     }
     .foot{
-        margin:60px 60px;
+        margin:30px 60px;
+        margin-top:30px
     }
     .customer{
-        margin:60px 60px;
+        margin:30px 60px;
+        margin-top:30px
+    }
+    .contact{
+        margin:30px 60px;
+        margin-top:30px
     }
   }
