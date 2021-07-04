@@ -1,0 +1,8 @@
+.half-width{
+    font-family:'Poppins',sans-serif;
+    width: 40%
+}
+.half-width h2{
+    color: tomato;
+    border: 5px 5px;
+}
