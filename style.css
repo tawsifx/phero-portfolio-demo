@@ -128,18 +128,18 @@ a{
 @media only screen and (max-width: 600px) {
     .note{
       margin:30px 60px;
-      margin-top:30px
+      margin-top:30px;
     }
     .foot{
         margin:30px 60px;
-        margin-top:30px
+        margin-top:30px;
     }
     .customer{
         margin:30px 60px;
-        margin-top:30px
+        margin-top:30px;
     }
     .contact{
         margin:30px 60px;
-        margin-top:30px
+        margin-top:30px;
     }
   }
