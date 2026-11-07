@@ -10,6 +10,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Skeleton Screen -->
+    <div id="skeleton-overlay" class="skeleton-wrapper" aria-hidden="false" role="status" aria-label="Loading page">
+        <div class="skeleton-banner">
+            <div class="skeleton-text-col">
+                <div class="skeleton-bar" style="width: 35%; height: 28px; margin-bottom: 12px;"></div>
+                <div class="skeleton-bar" style="width: 65%; height: 48px; margin-bottom: 20px;"></div>
+                <div class="skeleton-bar" style="width: 95%; height: 16px; margin-bottom: 10px;"></div>
+                <div class="skeleton-bar" style="width: 90%; height: 16px; margin-bottom: 10px;"></div>
+                <div class="skeleton-bar" style="width: 80%; height: 16px; margin-bottom: 24px;"></div>
+                <div class="skeleton-bar" style="width: 140px; height: 44px; border-radius: 8px;"></div>
+            </div>
+            <div class="skeleton-img-col">
+                <div class="skeleton-rect" style="width: 320px; height: 320px; border-radius: 16px;"></div>
+            </div>
+        </div>
+        <div class="skeleton-cards-section">
+            <div class="skeleton-bar" style="width: 220px; height: 36px; margin: 0 auto 30px;"></div>
+            <div class="skeleton-cards-grid">
+                <div class="skeleton-card-box">
+                    <div class="skeleton-rect" style="width: 100%; height: 200px; border-radius: 8px;"></div>
+                </div>
+                <div class="skeleton-card-box">
+                    <div class="skeleton-rect" style="width: 100%; height: 200px; border-radius: 8px;"></div>
+                </div>
+                <div class="skeleton-card-box">
+                    <div class="skeleton-rect" style="width: 100%; height: 200px; border-radius: 8px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="top-banner">
         <div class="half-width">
             <h1>Hello I'm</h1>
@@ -69,5 +100,23 @@
          </div>
     </section>
     
+    <script>
+        // Dismiss loading skeleton on window load
+        window.addEventListener('load', function() {
+            var skeleton = document.getElementById('skeleton-overlay');
+            if (skeleton) {
+                skeleton.classList.add('loaded');
+                skeleton.setAttribute('aria-hidden', 'true');
+                setTimeout(function() {
+                    skeleton.style.display = 'none';
+                }, 400);
+            }
+        });
+    </script>
+    <noscript>
+        <style>
+            #skeleton-overlay { display: none !important; }
+        </style>
+    </noscript>
 </body>
 </html>
