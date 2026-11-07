@@ -1,141 +1,239 @@
-body{
-    font-family:"Poppins",sans-serif;
+/* Modern CSS Architecture for Developer Portfolio */
+:root {
+    --primary-color: tomato;
+    --accent-color: orange;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    --bg-card: #ffffff;
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.14);
 }
-.half-width{
-    
-    width: 40%;
-    float:left;
-    margin-left:5%;
-    padding-left: 2%;
-    margin-bottom: 1%;
-    
-    
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
-.half-width h2{
-    color: tomato;
-    
-    font-size: 50px;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
-h1{
-    font-size: 50px;
+
+h1 {
+    font-size: clamp(2rem, 1.2rem + 3.5vw, 3.2rem);
+    line-height: 1.2;
+    margin-block: 0.5rem;
 }
-.half-width img{
-    width: 100%
+
+p {
+    color: var(--text-muted);
+    font-size: 1rem;
 }
-.top-banner{
+
+a {
+    display: inline-block;
+    background-image: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 99, 71, 0.45);
+}
+
+/* Hero / Top Banner */
+.top-banner {
     background-image: url("images/header-bg.png");
     background-repeat: no-repeat;
-    height:800px;
-    margin:0px;
-    
-}
-p{
-    color:grey;
-}
-
-a{
-    background-image: linear-gradient(45deg, tomato,orange);
-    padding: 5px 10px;
-    text-decoration:none;
-    font-weight: 400;
-    color:white;
-}
-.bio-banner{
-    background-image:url("images/biography-bg.png");
-    background-repeat : no-repeat;
-    height:900px;
-    margin:0px;
-}
-.latestwork{
-    text-align:center;
-    
+    background-size: cover;
+    background-position: center;
+    min-block-size: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 60px 8%;
 }
 
-
-.workimages{
-    
-    margin-left: 45px;
-    padding: 8px;
-    float:left;
-    box-shadow:5px 5px 20px grey;
-  
+.bio-banner {
+    background-image: url("images/biography-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-block-size: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 60px 8%;
 }
-.latestworkarea{
-    height: 500px;
+
+.half-width {
+    flex: 1 1 340px;
+    max-width: 560px;
+    padding: 1rem;
+}
+
+.half-width h2 {
+    color: var(--primary-color);
+    font-size: clamp(1.8rem, 1.2rem + 2.5vw, 2.8rem);
+    margin-block: 0.3rem;
+}
+
+.half-width h3 {
+    font-size: 1.25rem;
+    color: #444;
+    font-weight: 500;
+}
+
+.half-width img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Latest Work Area */
+.latestworkarea {
     background-image: url("images/latest-work-bg.png");
-    background-repeat:no-repeat;
-    
-    margin: 0px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 60px 5%;
 }
-.customer{
-    text-align:center;
-    width: 50%;
-    margin: auto;
-    padding-top: 20px;
-}
-.customer h1 {
-    font-size: 40px;
-}
-.customer h2{
-    font-size:20px;
-}
-.customer h3{
-    font-size: 15px;
-}
-.contact {
-  
-   
-   padding: 5px 10px;
-   text-align:center;
-   color:orange;
-   box-shadow: 10px 10px 40px gray;
-   border:1px solid;
-   margin: 10px 400px;
-   border-radius:10px;
-   
-   background-image: linear-gradient(45deg, tomato,orange);
 
-}
-.footer{
-    background-image:url("images/footer-bg.png");
-    background-size: 100%;
-    height:800px;
-    
-}
-.contact h5{
-    font-size: 20px;
-    color:whitesmoke;
-}
-.contact p{
-    font-size: 20px;
-    color:white;
-}   
-.contactmargin{
-    margin-top:90px;
-}
-.foot{
-    
-    margin: 30px 420px;
-    margin-top: 150px;
-}
-.note{
-    font-size: 20px;
-    margin: 40px 120px;
+.latestwork {
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
-@media only screen and (max-width: 480px) {
-    .note {
-      margin : 60px 60px;
+
+.latestworkarea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.latestworkarea > .latestwork {
+    flex-basis: 100%;
+}
+
+.workimages {
+    flex: 0 1 350px;
+    padding: 10px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.workimages:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.workimages img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Footer & Customer Review */
+.footer {
+    background-image: url("images/footer-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px 5% 40px;
+}
+
+.customer {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+.customer h1 {
+    font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.2rem);
+}
+
+.customer h2 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.customer h3 {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.contactmargin {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.contact {
+    padding: 16px 32px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(255, 99, 71, 0.25);
+    border: none;
+    border-radius: 12px;
+    background-image: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact h5 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin: 0 0 6px;
+}
+
+.contact p {
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.foot {
+    text-align: center;
+    margin: 40px auto 15px;
+    color: #888888;
+}
+
+.note {
+    font-size: 0.9rem;
+    max-width: 800px;
+    margin: 20px auto 0;
+    text-align: center;
+    color: #777777;
+    padding-inline: 1rem;
+}
+
+@media (max-width: 768px) {
+    .top-banner, .bio-banner {
+        padding: 40px 1.5rem;
+        min-block-size: auto;
     }
-  }
-  .contact {
-    margin : 60px 60px;
-  }
-  .foot{
-    margin : 60px 60px;
-  }
-  .customer{
-      margin-top:60px;
-  }
+    .half-width {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
