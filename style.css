@@ -237,3 +237,82 @@ a:hover {
         text-align: center;
     }
 }
+
+
+/* Loading Skeleton Architecture */
+.skeleton-wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 99999;
+    padding: 60px 8%;
+    overflow-y: auto;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.skeleton-wrapper.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.skeleton-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 60px;
+}
+
+.skeleton-text-col {
+    flex: 1 1 340px;
+    max-width: 550px;
+}
+
+.skeleton-img-col {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.skeleton-cards-section {
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.skeleton-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.skeleton-card-box {
+    flex: 0 1 320px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.skeleton-bar, .skeleton-rect {
+    background: linear-gradient(90deg, #eeeeee 25%, #f7f7f7 50%, #eeeeee 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s infinite;
+    display: block;
+}
+
+@keyframes skeleton-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skeleton-bar, .skeleton-rect {
+        animation: none;
+        background: #e2e2e2;
+    }
+}
